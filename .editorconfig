@@ -7,5 +7,8 @@ indent = 2
 indent_style = space
 insert_final_newline = true
 
+[*.vue]
+insert_final_newline = false
+
 [*.md]
 indent = 4
