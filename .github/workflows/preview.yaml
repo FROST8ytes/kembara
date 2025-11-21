@@ -27,7 +27,7 @@ jobs:
 
   deploy-preview:
     name: Deploy Vercel Preview
-    needs: [preview]
+    needs: [quality-check]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
