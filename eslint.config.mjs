@@ -16,6 +16,7 @@ export default withNuxt(antfu(
       semi: true,
       quotes: "double",
     },
+    ignores: ["./app/lib/db/migrations/"],
   },
   {
     rules: {
