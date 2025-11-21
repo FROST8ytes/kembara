@@ -20,7 +20,5 @@ jobs:
         with:
           node-version: 20.x
       - run: npm ci
-      - name: Install Required Dev Dependencies
-        run: npm ci -D husky drizzle-kit
       - name: Run Drizzle Migrate
         run: npm run db:migrate
