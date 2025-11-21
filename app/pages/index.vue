@@ -2,6 +2,12 @@
 import { Icon } from "@iconify/vue";
 
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
   Card,
   CardDescription,
   CardHeader,
@@ -56,6 +62,24 @@ const polaroidImages = [
     position: "bottom-0 left-1/4",
     rotation: "-rotate-2",
     zIndex: "z-2",
+  },
+];
+
+const faqs = [
+  {
+    value: "item-1",
+    question: "Is Kembara free to use?",
+    answer: "Yes! Kembara is currently a free and open-source project for logging your personal travel memories.",
+  },
+  {
+    value: "item-2",
+    question: "Is my location data private?",
+    answer: "Absolutely. We use MapLibre for privacy-focused mapping, and your logs are only visible to you unless you choose to share them.",
+  },
+  {
+    value: "item-3",
+    question: "Can I export my data?",
+    answer: "We are working on an export feature that will allow you to download all your photos and logs as a JSON file.",
   },
 ];
 </script>
@@ -142,5 +166,119 @@ const polaroidImages = [
         </Card>
       </div>
     </section>
+    <section class="mb-32 mt-24">
+      <h2 class="text-5xl font-heading text-center mb-16 underline decoration-4 underline-offset-8">
+        HOW IT WORKS
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+        <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-black -z-10 -translate-y-1/2" />
+
+        <Card class="bg-secondary border-2 border-black shadow-shadow! relative overflow-visible">
+          <div
+            class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-(--accent-blue) border-2 border-black flex items-center justify-center text-xl font-bold rounded-full z-10"
+          >
+            1
+          </div>
+          <CardHeader class="mt-6">
+            <CardTitle class="text-center text-xl">
+              Snap & Upload
+            </CardTitle>
+          </CardHeader>
+          <CardContent class="text-center text-muted-foreground">
+            Take a photo of your favorite moment and upload it directly to the platform.
+          </CardContent>
+        </Card>
+
+        <Card class="bg-secondary border-2 border-black shadow-shadow! relative overflow-visible">
+          <div
+            class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-(--accent-pink) border-2 border-black flex items-center justify-center text-xl font-bold rounded-full z-10"
+          >
+            2
+          </div>
+          <CardHeader class="mt-6">
+            <CardTitle class="text-center text-xl">
+              Tag Location
+            </CardTitle>
+          </CardHeader>
+          <CardContent class="text-center text-muted-foreground">
+            Our map integration automatically pins your memory to the exact spot it happened.
+          </CardContent>
+        </Card>
+
+        <Card class="bg-secondary border-2 border-black shadow-shadow! relative overflow-visible">
+          <div
+            class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-(--accent-yellow) border-2 border-black flex items-center justify-center text-xl font-bold rounded-full z-10"
+          >
+            3
+          </div>
+          <CardHeader class="mt-6">
+            <CardTitle class="text-center text-xl">
+              Relive Forever
+            </CardTitle>
+          </CardHeader>
+          <CardContent class="text-center text-muted-foreground">
+            Look back at your travel log anytime. Your privacy is our priority.
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+
+    <section class="mb-24 max-w-3xl mx-auto w-full">
+      <h2 class="text-5xl font-heading text-center underline decoration-4 underline-offset-8 mb-16">
+        FEATURES
+      </h2>
+
+      <Accordion type="single" collapsible class="w-full space-y-4">
+        <AccordionItem
+          v-for="faq in faqs" :key="faq.value" :value="faq.value"
+          class="bg-primary border-2 border-black shadow-shadow px-4 data-[state=open]:shadow-hover-down transition-all duration-200"
+        >
+          <AccordionTrigger class="font-bold text-lg hover:no-underline py-4">
+            {{ faq.question }}
+          </AccordionTrigger>
+          <AccordionContent class="text-muted-foreground text-base border-t-2 border-black/10 pt-4 pb-4">
+            {{ faq.answer }}
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </section>
+
+    <footer class="mt-20 border-t-4 border-black pt-10 w-full mb-12">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="text-center md:text-left">
+          <h1 class="text-3xl font-heading">
+            Kembara <span class="font-light text-base">Made with love ❤️</span>
+          </h1>
+          <p class="text-sm mt-2">
+            © 2025 FROST8ytes Kingdom. All rights reserved.
+          </p>
+        </div>
+
+        <div class="flex gap-4">
+          <CNButton
+            size="icon" variant="link"
+            class="border-2 border-black shadow-shadow transition-all ease-in-out achocus:-translate-y-0.5 achocus:-translate-x-0.5 achocus:shadow-hover-up bg-(--accent-blue)"
+          >
+            <NuxtLink to="https://github.com/FROST8ytes/kembara" target="_blank" rel="noreferrer">
+              <Icon
+                icon="mdi:github" class="h-5 w-5 stroke-primary-foreground"
+                :style="{ color: 'var(--primary-foreground)' }"
+              />
+              <span class="sr-only">GitHub</span>
+            </NuxtLink>
+          </CNButton>
+          <CNButton
+            size="icon" variant="link"
+            class="border-2 border-black shadow-shadow transition-all ease-in-out achocus:-translate-y-0.5 achocus:-translate-x-0.5 achocus:shadow-hover-up bg-(--accent-pink)"
+          >
+            <NuxtLink to="https://linkedin.com/in/ammarfmr" target="_blank" rel="noreferrer">
+              <Icon icon="mdi:linkedin" class="h-5 w-5" :style="{ color: 'var(--primary-foreground)' }" />
+              <span class="sr-only">LinkedIn</span>
+            </NuxtLink>
+          </CNButton>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
