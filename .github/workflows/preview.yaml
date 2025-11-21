@@ -41,4 +41,3 @@ jobs:
           scope: ${{ secrets.VERCEL_ORG_ID }}
           github-comment: true
           github-token: ${{ secrets.GH_TOKEN }}
-          vercel-args: --target=preview
