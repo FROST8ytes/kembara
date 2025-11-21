@@ -7,8 +7,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 import {
   Card,
+  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
@@ -93,11 +95,11 @@ const faqs = [
       </div>
       <div class="flex justify-end gap-5">
         <ModeToggle />
-        <CNButton
+        <Button
           class="h-auto font-bold border-2 shadow-shadow transition-all ease-in-out achocus:-translate-y-0.5 achocus:-translate-x-0.5 achocus:shadow-hover-up"
         >
           Login / Sign Up
-        </CNButton>
+        </Button>
       </div>
     </nav>
 
@@ -121,11 +123,11 @@ const faqs = [
           Every journey leads back to you.
         </p>
 
-        <CNButton
+        <Button
           class="h-auto px-10 py-3 text-lg font-bold border-2 shadow-shadow transition-all ease-in-out achocus:-translate-y-0.5 achocus:-translate-x-0.5 achocus:shadow-hover-up"
         >
           Login / Sign Up
-        </CNButton>
+        </Button>
       </div>
 
       <!-- Right Content: Polaroid Collage -->
@@ -257,7 +259,7 @@ const faqs = [
 
         <div class="flex gap-4">
           <NuxtLink to="https://github.com/FROST8ytes/kembara" external no-rel no-prefetch target="_blank">
-            <CNButton
+            <Button
               size="icon" variant="link"
               class="border-2 border-black shadow-shadow transition-all ease-in-out achocus:-translate-y-0.5 achocus:-translate-x-0.5 achocus:shadow-hover-up bg-(--accent-blue)"
             >
@@ -266,16 +268,16 @@ const faqs = [
                 :style="{ color: 'var(--primary-foreground)' }"
               />
               <span class="sr-only">GitHub</span>
-            </CNButton>
+            </Button>
           </NuxtLink>
           <NuxtLink to="https://linkedin.com/in/ammarfmr" external no-rel no-prefetch target="_blank">
-            <CNButton
+            <Button
               size="icon" variant="link"
               class="border-2 border-black shadow-shadow transition-all ease-in-out achocus:-translate-y-0.5 achocus:-translate-x-0.5 achocus:shadow-hover-up bg-(--accent-pink)"
             >
               <Icon icon="mdi:linkedin" class="h-5 w-5" :style="{ color: 'var(--primary-foreground)' }" />
               <span class="sr-only">LinkedIn</span>
-            </CNButton>
+            </Button>
           </NuxtLink>
         </div>
       </div>
