@@ -256,27 +256,27 @@ const faqs = [
         </div>
 
         <div class="flex gap-4">
-          <CNButton
-            size="icon" variant="link"
-            class="border-2 border-black shadow-shadow transition-all ease-in-out achocus:-translate-y-0.5 achocus:-translate-x-0.5 achocus:shadow-hover-up bg-(--accent-blue)"
-          >
-            <NuxtLink to="https://github.com/FROST8ytes/kembara" target="_blank" rel="noreferrer">
+          <NuxtLink to="https://github.com/FROST8ytes/kembara" external no-rel no-prefetch target="_blank">
+            <CNButton
+              size="icon" variant="link"
+              class="border-2 border-black shadow-shadow transition-all ease-in-out achocus:-translate-y-0.5 achocus:-translate-x-0.5 achocus:shadow-hover-up bg-(--accent-blue)"
+            >
               <Icon
                 icon="mdi:github" class="h-5 w-5 stroke-primary-foreground"
                 :style="{ color: 'var(--primary-foreground)' }"
               />
               <span class="sr-only">GitHub</span>
-            </NuxtLink>
-          </CNButton>
-          <CNButton
-            size="icon" variant="link"
-            class="border-2 border-black shadow-shadow transition-all ease-in-out achocus:-translate-y-0.5 achocus:-translate-x-0.5 achocus:shadow-hover-up bg-(--accent-pink)"
-          >
-            <NuxtLink to="https://linkedin.com/in/ammarfmr" target="_blank" rel="noreferrer">
+            </CNButton>
+          </NuxtLink>
+          <NuxtLink to="https://linkedin.com/in/ammarfmr" external no-rel no-prefetch target="_blank">
+            <CNButton
+              size="icon" variant="link"
+              class="border-2 border-black shadow-shadow transition-all ease-in-out achocus:-translate-y-0.5 achocus:-translate-x-0.5 achocus:shadow-hover-up bg-(--accent-pink)"
+            >
               <Icon icon="mdi:linkedin" class="h-5 w-5" :style="{ color: 'var(--primary-foreground)' }" />
               <span class="sr-only">LinkedIn</span>
-            </NuxtLink>
-          </CNButton>
+            </CNButton>
+          </NuxtLink>
         </div>
       </div>
     </footer>
