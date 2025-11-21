@@ -1,0 +1,24 @@
+name: Production Pipeline
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  migrate-production:
+    name: Migrate Production DB
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v5
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+      - run: npm ci
+      - name: Run Drizzle Migrate
+        run: npm run db:migrate
+        env:
+          TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
+          TURSO_AUTH_KEY: ${{ secrets.TURSO_AUTH_KEY }}
+          NODE_ENV: ${{ vars.NODE_ENV }}
