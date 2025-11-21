@@ -13,6 +13,8 @@ jobs:
       TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
       TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
       NODE_ENV: ${{ vars.NODE_ENV }}
+      BETTER_AUTH_SECRET: PLACEHOLDER TO RUN
+      BETTER_AUTH_URL: DATABASE MIGRATIONS SUCCESSFULLY
     steps:
       - uses: actions/checkout@v5
       - name: Use Node.js
