@@ -2,3 +2,5 @@
 export * from "./locations";
 export * from "./location-logs";
 export * from "./location-log-images";
+
+export * from "./auth";
