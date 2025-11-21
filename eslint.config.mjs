@@ -19,10 +19,12 @@ export default withNuxt(antfu(
   },
   {
     rules: {
+      // "ts/no-redeclare": "off",
       "ts/consistent-type-definitions": ["error", "type"],
       "no-console": ["off"],
       "antfu/no-top-level-await": ["off"],
       "node/prefer-global/process": ["off"],
+      "node/no-process-env": ["error"],
       "style/no-multiple-empty-lines": ["error", { max: 2, maxEOF: 1 }],
       "perfectionist/sort-imports": ["error", {
         tsconfigRootDir: ".",
