@@ -9,6 +9,10 @@ jobs:
     name: Migrate Production DB
     runs-on: ubuntu-latest
     environment: production
+    env:
+      TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
+      TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
+      NODE_ENV: ${{ vars.NODE_ENV }}
     steps:
       - uses: actions/checkout@v5
       - name: Use Node.js
@@ -18,7 +22,3 @@ jobs:
       - run: npm ci
       - name: Run Drizzle Migrate
         run: npm run db:migrate
-        env:
-          TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
-          TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
-          NODE_ENV: ${{ vars.NODE_ENV }}
