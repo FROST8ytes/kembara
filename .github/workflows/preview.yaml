@@ -11,7 +11,7 @@ jobs:
     environment: preview
     env:
       TURSO_DATABASE_URL: ${{ secrets.TURSO_DATABASE_URL }}
-      TURSO_AUTH_KEY: ${{ secrets.TURSO_AUTH_KEY }}
+      TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
       NODE_ENV: ${{ vars.NODE_ENV }}
     steps:
       - uses: actions/checkout@v5
