@@ -7,7 +7,9 @@ const colorMode = useColorMode();
 <template>
   <CNDropdownMenu>
     <CNDropdownMenuTrigger as-child>
-      <CNButton variant="outline">
+      <CNButton
+        class="h-auto font-bold border-2 shadow-shadow transition-all ease-in-out achocus:-translate-y-0.5 achocus:-translate-x-0.5 achocus:shadow-hover-up"
+      >
         <Icon
           icon="radix-icons:moon"
           class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
@@ -19,7 +21,7 @@ const colorMode = useColorMode();
         <span class="sr-only">Toggle theme</span>
       </CNButton>
     </CNDropdownMenuTrigger>
-    <CNDropdownMenuContent align="end">
+    <CNDropdownMenuContent class="shadow-shadow border-2" align="end">
       <CNDropdownMenuItem @click="colorMode.preference = 'light'">
         Light
       </CNDropdownMenuItem>
